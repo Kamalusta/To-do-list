@@ -1,0 +1,44 @@
+.container{
+    border: 1px solid black;
+    max-width: 336px;
+    border-radius: 10px;
+}
+.main-body{
+    text-align: center;
+}
+header{
+    max-width: 336px;
+    height: 28px;
+    background-color: #FFDC40;
+    /* position: absolute; */
+    /* left: 50%;
+    top: 50%; */
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.input{
+    width: 286px;
+    height: 40px;
+    border-radius: 10px;
+    
+}
+.list{
+    text-align: center;
+}
+h2{
+    font-size: 26px;
+    text-align: center;
+}
+.sort{
+    text-align: right;
+}
+.add{
+    text-align: center;
+    background-color: #833AE0;
+    width: 150px;
+    height: 42px;
+    border-radius: 71px;
+}
+.add p{
+    color: white;
+}
