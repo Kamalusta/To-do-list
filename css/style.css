@@ -1,10 +1,14 @@
+
 .container{
-    border: 1px solid black;
+    border: 1px solid gray;
     max-width: 336px;
     border-radius: 10px;
 }
 .main-body{
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* padding-left: 20px; */
 }
 header{
     max-width: 336px;
@@ -16,21 +20,32 @@ header{
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
-.input{
-    width: 286px;
-    height: 40px;
-    border-radius: 10px;
-    
-}
 .list{
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    /* padding: 20px; */
+    border-collapse: collapse;
+    width: 286px;
+    border-radius: 10px;
+    border: 1px solid gray;
+}
+.list div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.list img{
+    margin-right: 10px;
 }
 h2{
     font-size: 26px;
     text-align: center;
+    font-weight: 900;
 }
 .sort{
     text-align: right;
+    align-self: flex-end;
+    margin-right: 30px;
 }
 .add{
     text-align: center;
@@ -38,7 +53,40 @@ h2{
     width: 150px;
     height: 42px;
     border-radius: 71px;
+    margin-top: 18px;
+    margin-bottom: 19px;
+    display: flex;
+    align-items: center;
 }
 .add p{
     color: white;
+    margin-left: 20px;    
+    font-size: 14px;
+}
+.tasks{
+    padding-left: 20px;
+}
+.tasks p{
+    margin:10px 0 10px 0;
+}
+.input{
+    width: 286px;
+    height:34px ;
+    border-radius: 10px;
+    border: 1px solid gray;
+    margin-top: 5px;
+}
+.plus{
+    display: flex;
+    text-align: center;
+    background-color: #9953F1;
+    width: 42px;
+    height: 42px;
+    border-radius: 71px;
+    align-items: center;
+    justify-content: center;
+}
+.plus p{
+    margin: 0px;    
+    font-size: 14px;
 }
