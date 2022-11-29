@@ -6,27 +6,9 @@ let counter=0;
 
 button.addEventListener('click',adding);
 document.addEventListener('keydown',(event=>{
-    if(event.key=='Enter'){
+    if(event.key=='Enter')
         adding();
-    }
 }));
-
-// sortIcon.addEventListener('mouseover',(event=>{
-//     if(event.target.src=="/icons/Group 74.png"){
-//     event.target.src='/icons/Group 73.png';
-//     }
-//      else if(event.target.src=='/icons/Group 90.png'){
-//     event.target.src='/icons/Group 91.png'}
-// }));
-
-// sortIcon.addEventListener('mouseleave',(event=>{
-//     if(event.target.src=='/icons/Group 73.png'){
-//         event.target.src='/icons/Group 74.png';
-//     }
-//     else if(event.target.src=='/icons/Group 91.png'){
-//         event.target.src='/icons/Group 90.png'}
-// }))
-
 sortIcon.addEventListener('click',increase);
 function increase(event){
     event.target.src='/icons/Group 90.png';
@@ -47,7 +29,7 @@ function increase(event){
     sortIcon.addEventListener('mouseleave',(event=>{
         event.target.src='/icons/Group 90.png'
     }))
-};
+}
 function decrease(event){
     event.target.src='/icons/Group 74.png';
     const listArr=[];
@@ -69,7 +51,7 @@ function decrease(event){
     }))
 }
 function adding(){
-    if(counter<5){
+    if(counter<5 & input.value!=''){
     counter++;
     list.style.visibility='visible';
     let elementDiv = document.createElement('div');
