@@ -62,6 +62,7 @@ function adding(){
     })
     let elementP = document.createElement('p');
     elementP.innerText=input.value
+    elementP.contentEditable='true'
     tasks.forEach(task=>{
         task.append(elementP);
     })
