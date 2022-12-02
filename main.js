@@ -55,14 +55,15 @@ function adding(){
     counter++;
     list.style.visibility='visible';
     let elementDiv = document.createElement('div');
+    elementDiv.draggable='true';
     list.append(elementDiv);
     const tasks=document.querySelectorAll('.list div')
     tasks.forEach(task=>{
         task.classList.add('tasks');
     })
     let elementP = document.createElement('p');
-    elementP.innerText=input.value
-    elementP.contentEditable='true'
+    elementP.innerText=input.value;
+    elementP.contentEditable='true';
     tasks.forEach(task=>{
         task.append(elementP);
     })
@@ -83,6 +84,10 @@ function adding(){
     })
     }
     input.value='';
+      const listItens = document.querySelectorAll('.tasks');
+      [].forEach.call(listItens, function(item) {
+        addEventsDragAndDrop(item);
+      });
 }
 function deleting(event){
         event.target.parentElement.remove();
@@ -90,3 +95,51 @@ function deleting(event){
         if(counter<1)
             list.style.visibility='hidden';
 }
+
+function dragStart(e) {
+    this.style.opacity = '0.4';
+    dragSrcEl = this;
+    e.dataTransfer.effectAllowed = 'move';
+    e.dataTransfer.setData('text/html', this.innerHTML);
+  };
+  
+  function dragEnter(e) {
+    this.classList.add('over');
+  }
+  
+  function dragLeave(e) {
+    e.stopPropagation();
+    this.classList.remove('over');
+  }
+  
+  function dragOver(e) {
+    e.preventDefault();
+    e.dataTransfer.dropEffect = 'move';
+    return false;
+  }
+  
+  function dragDrop(e) {
+    if (dragSrcEl != this) {
+      dragSrcEl.innerHTML = this.innerHTML;
+      this.innerHTML = e.dataTransfer.getData('text/html');
+    }
+    return false;
+  }
+  
+  function dragEnd(e) {
+    const listItens = document.querySelectorAll('.tasks');
+    [].forEach.call(listItens, function(item) {
+      item.classList.remove('over');
+    });
+    this.style.opacity = '1';
+  }
+  
+  function addEventsDragAndDrop(el) {
+    el.addEventListener('dragstart', dragStart, false);
+    el.addEventListener('dragenter', dragEnter, false);
+    el.addEventListener('dragover', dragOver, false);
+    el.addEventListener('dragleave', dragLeave, false);
+    el.addEventListener('drop', dragDrop, false);
+    el.addEventListener('dragend', dragEnd, false);
+  }
+  
