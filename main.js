@@ -84,10 +84,10 @@ function adding(){
     })
     }
     input.value='';
-      const listItens = document.querySelectorAll('.tasks');
-      [].forEach.call(listItens, function(item) {
-        addEventsDragAndDrop(item);
-      });
+    // const listItens = document.querySelectorAll('.tasks');
+    // [].forEach.call(listItens, function(item) {
+    // addEventsDragAndDrop(item);
+    // });
 }
 function deleting(event){
         event.target.parentElement.remove();
